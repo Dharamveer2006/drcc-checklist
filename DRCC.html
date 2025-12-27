@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRCC reuirement check List</title>
+    <style>
+        /* This makes it look good on mobile and desktop */
+        body { font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f4f9; }
+        .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h2 { color: #333; text-align: center; }
+        
+        /* Checklist Item Styles */
+        .task { display: flex; align-items: center; padding: 12px; border-bottom: 1px solid #eee; }
+        .task:last-child { border-bottom: none; }
+        .task:hover { background-color: #f9f9f9; }
+        
+        /* The Checkbox Logic */
+        input[type="checkbox"] { transform: scale(1.5); margin-right: 15px; cursor: pointer; }
+        label { cursor: pointer; font-size: 18px; width: 100%; }
+        
+        /* Strikethrough when checked */
+        input[type="checkbox"]:checked + label { text-decoration: line-through; color: #888; }
+
+        /* Reset Button */
+        .btn-reset { display: block; width: 100%; padding: 10px; margin-top: 20px; background: #ff4d4d; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>📋 DRCC documents reuirement check List</h2>
+    <center><h3><strong>Make sure have both original and copy of each Documents.</strong></h3></center>
+    <div class="task">
+        <input type="checkbox" id="task1">
+        <label for="task1">1. Aadhaar Card (Both of student and guardian)</label>
+    </div>
+
+    <div class="task">
+        <input type="checkbox" id="task2">
+        <label for="task2">2. Mobile number </label>
+    </div>
+
+    <div class="task">
+        <input type="checkbox" id="task3">
+        <label for="task3">3. Email Id (Both of student and guardian)</label>
+    </div>
+
+    <div class="task">
+        <input type="checkbox" id="task4">
+        <label for="task4">4. 2-4 Passport size photo (Both of student and guardian)</label>
+    </div>
+    <div class="task">
+        <input type="checkbox" id="task5">
+        <label for="task5">5. PAN card (Both of student and guardian)</label>
+    </div>
+    <div class="task">
+        <input type="checkbox" id="task6">
+        <label for="task6">6. Bihar Domicile certificate</label>
+    </div>
+    <div class="task">
+        <input type="checkbox" id="task7">
+        <label for="task7">7. Class 10 Marksheet and certificate</label>
+    </div>
+    <div class="task">
+        <input type="checkbox" id="task8">
+        <label for="task8">8. Class 12 Marksheet and certificate</label>
+    </div>
+    <div class="task">
+        <input type="checkbox" id="task9">
+        <label for="task9">9. College Admission proof (Bonafide Certificate)</label>
+    </div>
+    <div class="task">
+        <input type="checkbox" id="task10">
+        <label for="task10">10. College Fee structure (verified)</label>
+    </div>
+    <div class="task">
+        <input type="checkbox" id="task11">
+        <label for="task11">11. Bank Details (Both of student and guardian)</label>
+    </div>
+    <div class="task">
+        <input type="checkbox" id="task12">
+        <label for="task12">12. Income Certificate</label>
+    </div>
+    <div class="task">
+        <input type="checkbox" id="task13">
+        <label for="task13">13. PDF of form filled on DRCC website</label>
+    </div>
+    <div class="task">
+        <input type="checkbox" id="task14">
+        <label for="task14">14. Caste Certificate</label>
+    </div>
+    <div class="task">
+        <input type="checkbox" id="task15">
+        <label for="task15">15. Make sure to download the application pdf after form filling.</label>
+    </div>
+    <div class="task">
+        <input type="checkbox" id="task16">
+        <label for="task16"><a href="https://www.7nishchay-yuvaupmission.bihar.gov.in/">16. Apply for DRCC loan.</a></label>
+    </div>
+    <div class="task">
+        <input type="checkbox" id="task17">
+        <label for="task17">17. Now wait for loan amount sanction letter.</label>
+    </div>
+    <section class="card community">
+  <h2>🤝 Join Our Developer Community</h2>
+  <p>Become part of our growing community of learners, developers, and tech enthusiasts.</p>
+  <a class="btn primary-btn" 
+     href="https://forms.gle/ThAERrVCCRYnzV2HA" 
+     target="_blank">
+     Join Now
+  </a>
+</section>
+<section class="card social">
+  <h2>🌐 Connect With Us</h2>
+  <p>Follow us on social media to stay updated with new resources and opportunities.</p>
+
+  <div class="social-icons">
+    <a href="https://github.com/Dharamveer2006" target="_blank" title="GitHub">
+      <img src="github.png" alt="GitHub">
+    </a>
+
+    <a href="https://www.linkedin.com/in/dharamveer-sharma-637034282/" target="_blank" title="LinkedIn">
+      <img src="linkedin.png" alt="LinkedIn">
+    </a>
+
+    <a href="https://www.instagram.com/dharamveersharma8809/" target="_blank" title="Instagram">
+      <img src="instagram.png" alt="Instagram">
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=100086406067290" target="_blank" title="Facebook">
+      <img src="facebook.png" alt="Facebook">
+    </a>
+  </div>
+</section>
+<button class="btn-reset" onclick="resetList()">Clear All Checks</button>
+</div>
+
+<script>
+    // This script saves your progress to the browser's Local Storage
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    function saveStatus() {
+        checkboxes.forEach(box => {
+            localStorage.setItem(box.id, box.checked);
+        });
+    }
+
+    function loadStatus() {
+        checkboxes.forEach(box => {
+            const checked = localStorage.getItem(box.id) === 'true';
+            box.checked = checked;
+        });
+    }
+
+    function resetList() {
+        if(confirm("Are you sure you want to uncheck everything?")) {
+            checkboxes.forEach(box => {
+                box.checked = false;
+                localStorage.removeItem(box.id);
+            });
+        }
+    }
+
+    // Listen for clicks to save immediately
+    checkboxes.forEach(box => {
+        box.addEventListener('change', saveStatus);
+    });
+
+    // Load saved checks when page opens
+    loadStatus();
+</script>
+<footer>
+Made for Bihar Students with ❤️ <strong> by Dharamveer Sharma</strong> | Free & Offline Friendly
+</footer>
+</body>
+</html>

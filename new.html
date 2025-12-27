@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRCC Document Checklist | Bihar Student Credit Card</title>
+
+<style>
+:root{
+  --primary:#2563eb;
+  --secondary:#1e40af;
+  --bg:#f1f5f9;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --success:#22c55e;
+  --danger:#ef4444;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:"Inter","Segoe UI",system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(135deg,var(--secondary),var(--primary));
+  color:#fff;
+  padding:35px 20px;
+  text-align:center;
+}
+
+header h1{margin:0;font-size:28px}
+header p{margin-top:10px;font-size:15px;opacity:.95}
+
+.lang-buttons{margin-top:15px}
+.lang-buttons button{margin:5px}
+
+/* CONTAINER */
+.container{max-width:900px;margin:25px auto;padding:15px}
+
+/* NOTE */
+.note{
+  background:#e0e7ff;
+  border-left:5px solid var(--primary);
+  padding:15px;
+  border-radius:8px;
+  margin-bottom:20px;
+  font-size:14px;
+}
+
+/* PROGRESS */
+.progress-card{
+  background:var(--card);
+  padding:18px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,.05);
+  margin-bottom:25px;
+}
+
+.progress-bar{
+  height:10px;
+  background:#e5e7eb;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:8px;
+}
+
+.progress{
+  height:100%;
+  width:0%;
+  background:var(--success);
+  transition:.3s;
+}
+
+/* SECTIONS */
+.section{
+  background:var(--card);
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.section h2{margin-top:0;color:var(--primary)}
+
+/* TASK */
+.task{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px;
+  border-radius:10px;
+}
+
+.task:hover{background:#f8fafc}
+.task input{transform:scale(1.3)}
+input:checked + label{text-decoration:line-through;color:var(--muted)}
+
+/* BUTTONS */
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+
+.btn{
+  padding:14px;
+  border-radius:12px;
+  font-size:15px;
+  border:none;
+  cursor:pointer;
+}
+
+.btn-primary{background:var(--primary);color:#fff}
+.btn-danger{background:var(--danger);color:#fff}
+
+/* SOCIAL */
+.social{text-align:center}
+.social-icons img{width:42px;height:42px;border-radius:50%;margin:0 10px}
+
+/* FOOTER */
+footer{text-align:center;font-size:13px;color:var(--muted);margin:35px 0}
+
+/* AI CHAT */
+#aiBox input{width:100%;padding:10px;margin-bottom:10px}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1 data-key="title">DRCC Document Checklist</h1>
+  <p data-key="subtitle">A complete checklist for Bihar Student Credit Card applicants</p>
+
+  <div class="lang-buttons">
+    <button class="btn btn-primary" onclick="setLang('en')">English</button>
+    <button class="btn btn-primary" onclick="setLang('hi')">हिंदी</button>
+  </div>
+</header>
+
+<div class="container">
+
+<div class="note" data-key="note">
+⚠️ Please carry both original documents and self-attested photocopies.
+</div>
+
+<div class="progress-card">
+  <strong id="progressText">0 of 17 completed</strong>
+  <div class="progress-bar"><div class="progress" id="progressBar"></div></div>
+</div>
+
+<div class="section">
+<h2 data-key="personal">👤 Personal Identification Details</h2>
+<div class="task"><input type="checkbox" id="t1"><label data-key="aadhaar">Aadhaar Card (Student & Guardian)</label></div>
+<div class="task"><input type="checkbox" id="t2"><label data-key="mobile">Active Mobile Number (Aadhaar linked)</label></div>
+<div class="task"><input type="checkbox" id="t3"><label data-key="email">Valid Email Address</label></div>
+<div class="task"><input type="checkbox" id="t4"><label data-key="photo">Passport Size Photographs</label></div>
+<div class="task"><input type="checkbox" id="t5"><label data-key="pan">PAN Card (If available)</label></div>
+<div class="task"><input type="checkbox" id="t6"><label data-key="domicile">Bihar Domicile Certificate</label></div>
+</div>
+
+<div class="section">
+<h2 data-key="academic">🎓 Educational Documents</h2>
+<div class="task"><input type="checkbox" id="t7"><label>Class 10 Certificate</label></div>
+<div class="task"><input type="checkbox" id="t8"><label>Class 12 Certificate</label></div>
+<div class="task"><input type="checkbox" id="t9"><label>College Admission Proof</label></div>
+<div class="task"><input type="checkbox" id="t10"><label>Verified Fee Structure</label></div>
+</div>
+
+<div class="section">
+<h2 data-key="bank">🏦 Banking & Supporting Documents</h2>
+<div class="task"><input type="checkbox" id="t11"><label>Bank Passbook</label></div>
+<div class="task"><input type="checkbox" id="t12"><label>Income Certificate</label></div>
+<div class="task"><input type="checkbox" id="t13"><label>Caste Certificate (if applicable)</label></div>
+<div class="task"><input type="checkbox" id="t14"><label>DRCC Application PDF</label></div>
+<div class="task"><input type="checkbox" id="t15"><label>Final Application Downloaded</label></div>
+<div class="task"><input type="checkbox" id="t16"><label>Applied on Portal</label></div>
+<div class="task"><input type="checkbox" id="t17"><label>Sanction Letter Received</label></div>
+</div>
+
+<div class="actions">
+<button class="btn btn-danger" onclick="resetAll()">Clear All</button>
+<button class="btn btn-primary" onclick="downloadPDF()">Download PDF</button>
+<a class="btn btn-primary" href="https://www.7nishchay-yuvaupmission.bihar.gov.in/" target="_blank">Apply on DRCC Portal</a>
+</div>
+
+<!-- AI HELPER -->
+<div class="section" id="aiBox">
+<h2>🤖 DRCC Help Assistant</h2>
+<input id="userQ" placeholder="Ask about documents, time, income certificate...">
+<button class="btn btn-primary" onclick="askAI()">Ask</button>
+<p id="aiAnswer"></p>
+</div>
+
+<!-- SOCIAL -->
+<div class="section social">
+<h2>🌐 Connect With Us</h2>
+<div class="social-icons">
+<img src="github.png">
+<img src="linkedin.png">
+<img src="instagram.png">
+<img src="facebook.png">
+</div>
+</div>
+
+<footer>
+Made for Bihar Students ❤️ <br><strong>Dharamveer Sharma</strong>
+</footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+/* CHECKLIST + PROGRESS */
+const boxes=document.querySelectorAll("input[type='checkbox']");
+const progressBar=document.getElementById("progressBar");
+const progressText=document.getElementById("progressText");
+const total=boxes.length;
+
+function updateProgress(){
+ let checked=0;
+ boxes.forEach(b=>{
+  localStorage.setItem(b.id,b.checked);
+  if(b.checked) checked++;
+ });
+ progressBar.style.width=(checked/total)*100+"%";
+ progressText.innerText=`${checked} of ${total} completed`;
+ if(checked===total) alert("✅ All documents completed!");
+}
+
+function loadProgress(){
+ boxes.forEach(b=>b.checked=localStorage.getItem(b.id)==="true");
+ updateProgress();
+}
+
+function resetAll(){
+ if(confirm("Clear all checklist items?")){
+  boxes.forEach(b=>{b.checked=false;localStorage.removeItem(b.id)});
+  updateProgress();
+ }
+}
+boxes.forEach(b=>b.addEventListener("change",updateProgress));
+loadProgress();
+
+/* LANGUAGE TOGGLE */
+const translations={
+ en:{
+  title:"DRCC Document Checklist",
+  subtitle:"A complete checklist for Bihar Student Credit Card applicants",
+  note:"⚠️ Please carry both original documents and self-attested photocopies.",
+  personal:"👤 Personal Identification Details",
+  academic:"🎓 Educational Documents",
+  bank:"🏦 Banking & Supporting Documents",
+  aadhaar:"Aadhaar Card (Student & Guardian)",
+  mobile:"Active Mobile Number (Aadhaar linked)",
+  email:"Valid Email Address",
+  photo:"Passport Size Photographs",
+  pan:"PAN Card (If available)",
+  domicile:"Bihar Domicile Certificate"
+ },
+ hi:{
+  title:"DRCC दस्तावेज़ चेकलिस्ट",
+  subtitle:"बिहार स्टूडेंट क्रेडिट कार्ड के लिए पूर्ण सूची",
+  note:"⚠️ सभी दस्तावेज़ों की मूल और स्व-सत्यापित प्रतियाँ साथ रखें।",
+  personal:"👤 व्यक्तिगत पहचान दस्तावेज़",
+  academic:"🎓 शैक्षणिक दस्तावेज़",
+  bank:"🏦 बैंक और सहायक दस्तावेज़",
+  aadhaar:"आधार कार्ड (छात्र व अभिभावक)",
+  mobile:"सक्रिय मोबाइल नंबर (आधार से लिंक)",
+  email:"मान्य ईमेल आईडी",
+  photo:"पासपोर्ट साइज फोटो",
+  pan:"पैन कार्ड (यदि उपलब्ध हो)",
+  domicile:"बिहार निवास प्रमाण पत्र"
+ }
+};
+
+function setLang(lang){
+ document.querySelectorAll("[data-key]").forEach(el=>{
+  el.innerText=translations[lang][el.dataset.key];
+ });
+ localStorage.setItem("lang",lang);
+}
+setLang(localStorage.getItem("lang")||"en");
+
+/* PDF */
+function downloadPDF(){
+ const {jsPDF}=window.jspdf;
+ const pdf=new jsPDF();
+ pdf.text("DRCC Document Checklist",10,10);
+ let y=20;
+ document.querySelectorAll(".task label").forEach((l,i)=>{
+  pdf.text(`${i+1}. ${l.innerText}`,10,y);
+  y+=7;
+ });
+ pdf.save("DRCC_Checklist.pdf");
+}
+
+/* AI HELPER */
+function askAI(){
+ const q=document.getElementById("userQ").value.toLowerCase();
+ let a="Please visit DRCC for official confirmation.";
+ if(q.includes("document")) a="Aadhaar, marksheets, domicile, bank passbook and admission proof are required.";
+ else if(q.includes("income")) a="Income certificate is mandatory and issued by Bihar authorities.";
+ else if(q.includes("time")) a="Loan approval usually takes 30–60 days after verification.";
+ document.getElementById("aiAnswer").innerText=a;
+}
+</script>
+
+</body>
+</html>

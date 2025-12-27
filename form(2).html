@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRCC Document Checklist</title>
+
+<style>
+:root {
+    --primary: #4f46e5;
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --success: #22c55e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header p {
+    margin-top: 8px;
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 720px;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+.progress-box {
+    background: var(--card);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.progress-bar {
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: var(--success);
+    transition: width 0.3s;
+}
+
+.section {
+    margin-bottom: 25px;
+}
+
+.section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.task {
+    background: var(--card);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    transition: transform 0.2s;
+}
+
+.task:hover {
+    transform: scale(1.01);
+}
+
+.task input {
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
+.task label {
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 1.4;
+    flex: 1;
+}
+
+input:checked + label {
+    text-decoration: line-through;
+    color: var(--muted);
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button, .btn-link {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.reset {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-link {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    margin: 30px 0 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>📋 DRCC Document Checklist</h1>
+    <p>Bihar Student Credit Card – Be fully prepared before DRCC visit</p>
+</header>
+
+<div class="container">
+
+<div class="progress-box">
+    <strong id="progressText">0 of 17 completed</strong>
+    <div class="progress-bar">
+        <div class="progress" id="progressBar"></div>
+    </div>
+</div>
+<h1>Make sure you have original and copy of all documents.</h1>
+
+<div class="section">
+<h2>👤 Personal & Identity</h2>
+<div class="task"><input type="checkbox" id="t1"><label>Aadhaar Card (Student & Guardian)</label></div>
+<div class="task"><input type="checkbox" id="t2"><label>Mobile Number (Active)</label></div>
+<div class="task"><input type="checkbox" id="t3"><label>Email ID (Student & Guardian)</label></div>
+<div class="task"><input type="checkbox" id="t4"><label>Passport Size Photos (2–4)</label></div>
+<div class="task"><input type="checkbox" id="t5"><label>PAN Card (If available)</label></div>
+<div class="task"><input type="checkbox" id="t6"><label>Bihar Domicile Certificate</label></div>
+</div>
+
+<div class="section">
+<h2>🎓 Academic Documents</h2>
+
+<div class="task"><input type="checkbox" id="t7"><label>Class 10 Marksheet & Certificate</label></div>
+<div class="task"><input type="checkbox" id="t8"><label>Class 12 Marksheet & Certificate</label></div>
+<div class="task"><input type="checkbox" id="t9"><label>College Admission Proof / Bonafide</label></div>
+<div class="task"><input type="checkbox" id="t10"><label>Verified College Fee Structure</label></div>
+</div>
+
+<div class="section">
+<h2>🏦 Bank & Other</h2>
+
+<div class="task"><input type="checkbox" id="t11"><label>Bank Passbook (Student & Guardian)</label></div>
+<div class="task"><input type="checkbox" id="t12"><label>Income Certificate</label></div>
+<div class="task"><input type="checkbox" id="t13"><label>Caste Certificate (If applicable)</label></div>
+<div class="task"><input type="checkbox" id="t14"><label>DRCC Application PDF</label></div>
+<div class="task"><input type="checkbox" id="t15"><label>Downloaded Final Application</label></div>
+<div class="task"><input type="checkbox" id="t16"><label>Applied on Official Portal</label></div>
+<div class="task"><input type="checkbox" id="t17"><label>Wait for Sanction Letter</label></div>
+</div>
+
+<div class="actions">
+<button class="reset" onclick="resetAll()">Clear All</button>
+<a class="btn-link" href="https://www.7nishchay-yuvaupmission.bihar.gov.in/" target="_blank">Apply on DRCC</a>
+</div>
+<section class="card community">
+  <h2>🤝 Join Our Developer Community</h2>
+  <p>Become part of our growing community of learners, developers, and tech enthusiasts.</p>
+  <a class="btn primary-btn" 
+     href="https://forms.gle/ThAERrVCCRYnzV2HA" 
+     target="_blank">
+     Join Now
+  </a>
+</section>
+<section class="card social">
+  <h2>🌐 Connect With Us</h2>
+  <p>Follow us on social media to stay updated with new resources and opportunities.</p>
+
+  <div class="social-icons">
+    <a href="https://github.com/Dharamveer2006" target="_blank" title="GitHub">
+      <img src="github.png" alt="GitHub">
+    </a>
+
+    <a href="https://www.linkedin.com/in/dharamveer-sharma-637034282/" target="_blank" title="LinkedIn">
+      <img src="linkedin.png" alt="LinkedIn">
+    </a>
+
+    <a href="https://www.instagram.com/dharamveersharma8809/" target="_blank" title="Instagram">
+      <img src="instagram.png" alt="Instagram">
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=100086406067290" target="_blank" title="Facebook">
+      <img src="facebook.png" alt="Facebook">
+    </a>
+  </div>
+</section>
+<footer>
+Made for Bihar Students with ❤️ <strong> by Dharamveer Sharma</strong> | Free & Offline Friendly
+</footer>
+
+</div>
+
+<script>
+const boxes = document.querySelectorAll("input[type='checkbox']");
+const progressBar = document.getElementById("progressBar");
+const progressText = document.getElementById("progressText");
+const total = boxes.length;
+
+function updateProgress() {
+    let checked = 0;
+    boxes.forEach(b => {
+        localStorage.setItem(b.id, b.checked);
+        if (b.checked) checked++;
+    });
+    progressBar.style.width = (checked / total) * 100 + "%";
+    progressText.innerText = `${checked} of ${total} completed`;
+}
+
+function loadProgress() {
+    boxes.forEach(b => {
+        b.checked = localStorage.getItem(b.id) === "true";
+    });
+    updateProgress();
+}
+
+function resetAll() {
+    if (confirm("Clear all checklist items?")) {
+        boxes.forEach(b => {
+            b.checked = false;
+            localStorage.removeItem(b.id);
+        });
+        updateProgress();
+    }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Web Development Hub Loaded Successfully 🚀");
+});
+
+boxes.forEach(b => b.addEventListener("change", updateProgress));
+loadProgress();
+</script>
+
+</body>
+</html>

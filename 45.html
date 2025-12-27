@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRCC Document Checklist | Bihar Student Credit Card</title>
+
+<style>
+:root{
+  --primary:#2563eb;
+  --bg:#f4f6fb;
+  --card:#ffffff;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --success:#22c55e;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Segoe UI, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* HEADER */
+header{
+  background:#2563eb;
+  color:#fff;
+  text-align:center;
+  padding:30px 15px;
+}
+header h1{margin:0;font-size:26px}
+header p{margin-top:8px;font-size:14px}
+
+/* LAYOUT */
+.container{
+  max-width:900px;
+  margin:20px auto;
+  padding:15px;
+}
+
+/* NOTE */
+.note{
+  background:#eef2ff;
+  padding:12px;
+  border-left:4px solid #2563eb;
+  margin-bottom:20px;
+  font-size:14px;
+}
+
+/* PROGRESS */
+.progress-box{
+  background:var(--card);
+  padding:15px;
+  border-radius:8px;
+  margin-bottom:20px;
+}
+.progress-bar{
+  height:10px;
+  background:#e5e7eb;
+  border-radius:10px;
+  overflow:hidden;
+}
+.progress{
+  height:100%;
+  width:0%;
+  background:var(--success);
+}
+
+/* SECTION */
+.section{
+  background:var(--card);
+  padding:18px;
+  border-radius:8px;
+  margin-bottom:20px;
+}
+.section h2{
+  margin-top:0;
+  color:#2563eb;
+}
+
+/* CHECKLIST */
+.item{
+  display:flex;
+  align-items:center;
+  margin:8px 0;
+}
+.item input{margin-right:10px;transform:scale(1.2)}
+.item label{cursor:pointer}
+
+/* FAQ */
+.faq button{
+  width:100%;
+  text-align:left;
+  padding:10px;
+  margin-top:8px;
+  border:1px solid #e5e7eb;
+  background:#f9fafb;
+  cursor:pointer;
+  border-radius:6px;
+}
+.faq p{
+  display:none;
+  padding:10px;
+  background:#f1f5f9;
+  margin-top:5px;
+  border-radius:6px;
+}
+
+/* BUTTONS */
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+button,a.btn{
+  padding:10px 14px;
+  border:none;
+  background:#2563eb;
+  color:#fff;
+  border-radius:6px;
+  text-decoration:none;
+  cursor:pointer;
+}
+button.reset{background:#ef4444}
+
+/* SOCIAL */
+.social a img{
+  width:36px;
+  margin:0 8px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#25d366;
+  color:#fff;
+  padding:12px 16px;
+  border-radius:40px;
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+  background:#111827;
+  color:#d1d5db;
+  text-align:center;
+  padding:20px 10px;
+  margin-top:40px;
+}
+footer strong{color:#fff}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>DRCC Document Checklist</h1>
+  <p>Bihar Student Credit Card – Simple & Clear Guide</p>
+</header>
+
+<div class="container">
+
+<div class="note">
+⚠️ Carry original documents and self-attested photocopies.
+</div>
+
+<div class="progress-box">
+  <strong id="status">0 / 8 completed</strong>
+  <div class="progress-bar">
+    <div class="progress" id="progress"></div>
+  </div>
+</div>
+
+<div class="section">
+<h2>📄 Required Documents</h2>
+
+<div class="item"><input type="checkbox" id="c1"><label>Aadhaar Card (Student & Guardian)</label></div>
+<div class="item"><input type="checkbox" id="c2"><label>Bihar Domicile Certificate</label></div>
+<div class="item"><input type="checkbox" id="c3"><label>Class 10 Marksheet</label></div>
+<div class="item"><input type="checkbox" id="c4"><label>Class 12 Marksheet</label></div>
+<div class="item"><input type="checkbox" id="c5"><label>College Admission Proof</label></div>
+<div class="item"><input type="checkbox" id="c6"><label>Bank Passbook</label></div>
+<div class="item"><input type="checkbox" id="c7"><label>Income Certificate</label></div>
+<div class="item"><input type="checkbox" id="c8"><label>Passport Size Photos</label></div>
+</div>
+
+<div class="section faq">
+<h2>❓ Frequently Asked Questions</h2>
+
+<button onclick="toggleFAQ(0)">What documents are required?</button>
+<p>Aadhaar, domicile, marksheets, bank passbook, income certificate, and admission proof.</p>
+
+<button onclick="toggleFAQ(1)">Is income certificate compulsory?</button>
+<p>Yes, it is mandatory for DRCC verification.</p>
+
+<button onclick="toggleFAQ(2)">How long does approval take?</button>
+<p>Usually 30–60 days after document verification.</p>
+</div>
+
+<div class="section actions">
+<button class="reset" onclick="resetChecklist()">Clear Checklist</button>
+<a class="btn" href="https://www.7nishchay-yuvaupmission.bihar.gov.in/" target="_blank">
+Apply on DRCC Portal
+</a>
+</div>
+
+<div class="section social">
+<h2>🌐 Connect With Me</h2>
+<a href="https://github.com/Dharamveer2006" target="_blank"><img src="github.png"></a>
+<a href="https://www.linkedin.com/in/dharamveer-sharma-637034282/" target="_blank"><img src="linkedin.png"></a>
+<a href="https://www.instagram.com/dharamveersharma8809/" target="_blank"><img src="instagram.png"></a>
+<a href="https://www.facebook.com/profile.php?id=100086406067290" target="_blank"><img src="facebook.png"></a>
+</div>
+
+</div>
+
+<a class="whatsapp" href="https://wa.me/919263934484" target="_blank">
+💬 WhatsApp Help
+</a>
+
+<footer>
+  <p><strong>Student Support & Guidance Platform</strong></p>
+  <p>Designed & Developed by <strong>Dharamveer Sharma</strong></p>
+  <small>Helping Bihar students with education and documentation</small>
+</footer>
+
+<script>
+const boxes=document.querySelectorAll("input[type='checkbox']");
+const progress=document.getElementById("progress");
+const status=document.getElementById("status");
+
+function update(){
+  let checked=0;
+  boxes.forEach(b=>{
+    localStorage.setItem(b.id,b.checked);
+    if(b.checked) checked++;
+  });
+  progress.style.width=(checked/boxes.length)*100+"%";
+  status.innerText=`${checked} / ${boxes.length} completed`;
+}
+
+boxes.forEach(b=>{
+  b.checked=localStorage.getItem(b.id)==="true";
+  b.addEventListener("change",update);
+});
+update();
+
+function resetChecklist(){
+  if(confirm("Clear all checklist items?")){
+    boxes.forEach(b=>{
+      b.checked=false;
+      localStorage.removeItem(b.id);
+    });
+    update();
+  }
+}
+
+function toggleFAQ(i){
+  const answers=document.querySelectorAll(".faq p");
+  answers.forEach((p,index)=>{
+    p.style.display=(index===i && p.style.display!=="block")?"block":"none";
+  });
+}
+</script>
+
+</body>
+</html>
